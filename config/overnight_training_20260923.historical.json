@@ -1,0 +1,32 @@
+{
+  "output": "C:\\Users\\leg\\Documents\\ChatGPT\\yolo\\outputs\\overnight\\20260923_reviewed_synthesis_v1",
+  "baseline": "C:\\Users\\leg\\Documents\\Codex\\2026-09-03\\yolo-e-26-9-3-yolo\\outputs\\training\\garbage_teacher_yolo11s_seg_reviewed20_r10_lr5e5_e10\\weights\\best.pt",
+  "baseline_data": "C:\\Users\\leg\\Documents\\Codex\\2026-09-03\\yolo-e-26-9-3-yolo\\datasets\\garbage_seg_factory_reviewed20_r10\\dataset.yaml",
+  "factory_source": "C:\\Users\\leg\\Documents\\ChatGPT\\yolo\\outputs\\overnight\\20260923_reviewed_synthesis_v1\\acceptance_sources",
+  "factory_labeled_data": "C:\\Users\\leg\\Documents\\ChatGPT\\yolo\\datasets\\garbage_overnight_reviewed_cp300_20260923\\factory_holdout.yaml",
+  "epochs": 18,
+  "patience": 0,
+  "imgsz": 960,
+  "batch": 8,
+  "lr0": 8e-05,
+  "seed": 20260923,
+  "device": "0",
+  "max_hours": 6,
+  "experiments": [
+    {
+      "name": "reviewed_control_e18",
+      "data": "C:\\Users\\leg\\Documents\\ChatGPT\\yolo\\datasets\\garbage_overnight_reviewed_cp300_20260923\\dataset_baseline.yaml"
+    },
+    {
+      "name": "reviewed_copypaste_e18",
+      "data": "C:\\Users\\leg\\Documents\\ChatGPT\\yolo\\datasets\\garbage_overnight_reviewed_cp300_20260923\\dataset_synthetic.yaml"
+    }
+  ],
+  "caveats": [
+    "Factory labeled diagnostic has only 8 images, 46 annotations and same-video temporal correlation.",
+    "Model predictions are never used as training truth.",
+    "No current-best weights or deployment config will be replaced."
+  ],
+  "source_dataset": "C:\\Users\\leg\\Documents\\ChatGPT\\yolo\\datasets\\garbage_overnight_reviewed_cp300_20260923",
+  "video_source": "C:\\Users\\leg\\Documents\\Codex\\2026-09-03\\yolo-e-26-9-3-yolo\\work\\extracted_frames\\test_camera1_full_10fps"
+}

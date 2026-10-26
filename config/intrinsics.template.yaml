@@ -1,0 +1,7 @@
+# Fill from the calibration for the exact camera, resolution and depth grid.
+width: null
+height: null
+fx: null
+fy: null
+cx: null
+cy: null

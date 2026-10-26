@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "depth_perception_result.schema.json",
+  "title": "Depth Perception Baseline Result",
+  "type": "object",
+  "required": [
+    "algorithm_version",
+    "frame",
+    "image",
+    "valid_depth_ratio",
+    "plane_valid",
+    "plane",
+    "quality_flags",
+    "detector_config",
+    "observations"
+  ],
+  "properties": {
+    "algorithm_version": {"type": "string"},
+    "frame": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["sequence_id", "timestamp_ns", "source_id", "frame_id"],
+          "properties": {
+            "sequence_id": {"type": "integer", "minimum": 0},
+            "timestamp_ns": {"type": "integer", "minimum": 0},
+            "source_id": {"type": "string", "minLength": 1},
+            "frame_id": {"type": "string", "minLength": 1}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "image": {
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "valid_depth_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+    "plane_valid": {"type": "boolean"},
+    "plane": {"type": ["object", "null"]},
+    "quality_flags": {"$ref": "#/$defs/qualityFlags"},
+    "detector_config": {"type": "object"},
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "component_id",
+          "bbox_xyxy",
+          "center_camera_m",
+          "footprint_camera_m",
+          "area_m2",
+          "height_m",
+          "valid_pixel_count",
+          "geometry_confidence",
+          "quality_flags"
+        ],
+        "properties": {
+          "component_id": {"type": "integer", "minimum": 0},
+          "bbox_xyxy": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}},
+          "center_camera_m": {"$ref": "#/$defs/point3"},
+          "footprint_camera_m": {"type": "array", "items": {"$ref": "#/$defs/point3"}},
+          "area_m2": {"type": "number", "minimum": 0},
+          "height_m": {"type": "number", "minimum": 0},
+          "valid_pixel_count": {"type": "integer", "minimum": 0},
+          "geometry_confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "quality_flags": {"$ref": "#/$defs/qualityFlags"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "$defs": {
+    "point3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}},
+    "qualityFlags": {
+      "type": "object",
+      "required": ["value", "names"],
+      "properties": {
+        "value": {"type": "integer", "minimum": 0},
+        "names": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

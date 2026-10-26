@@ -1,0 +1,6 @@
+# Replace path with the ABSOLUTE path of the extracted dataset.
+path: /absolute/path/to/datasets/garbage_seg_factory_reviewed20_r10
+train: images/train
+val: images/val
+names:
+  0: sweepable_litter

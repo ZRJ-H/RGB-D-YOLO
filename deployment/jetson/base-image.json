@@ -1,0 +1,14 @@
+{
+  "image": "ultralytics/ultralytics:8.3.179-jetson-jetpack6",
+  "digest": "sha256:ddde06a91b658955e203499a92308ccce3ba4fdf8ebbfa8ad65a2573902b1761",
+  "platform": "linux/arm64",
+  "target_board": "NVIDIA Jetson Orin Nano 8GB",
+  "target_host_jetpack": "6.2.1",
+  "target_host_l4t": "36.4.4",
+  "base_cuda": "12.6",
+  "ultralytics": "8.3.179",
+  "source_release": "yolo_depth_v0.1.0-preview_20260923_r3",
+  "source_release_zip_sha256": "e668a79d8833d00dee1820b31f7602ce31315c97528c323acdc774d3cb90717a",
+  "target_image_tag": "yolo-depth:0.1.0-preview-jp6.2.1-arm64",
+  "status": "target compatibility selected; board runtime validation pending"
+}

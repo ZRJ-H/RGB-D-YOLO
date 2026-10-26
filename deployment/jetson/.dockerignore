@@ -1,0 +1,9 @@
+*
+!Dockerfile
+!app/
+!app/**
+!container/
+!container/**
+**/__pycache__
+**/*.pyc
+**/.runtime

@@ -182,4 +182,3 @@ python -m pytest tests -q
 项目使用 Ultralytics、PyTorch、OpenCV、FoundationStereo 等第三方组件；第三方源码、数据和权重继续遵循各自许可。本次汇总不替这些材料重新授权，也未指定原创代码的统一开源许可。
 
 公开数据来源记录随 `public` 分组提供：TACO（DOI `10.5281/zenodo.3587843`）与 DSWD（DOI `10.17632/gr99ny6b8p.1`），本地来源记录均标注 CC BY 4.0。原始档案及其归属信息保留；转换、单类合并、人工纠错和 Copy-Paste 属于后续处理。现场数据与模型由仓库所有者明确要求公开发布；这不构成对第三方材料许可的扩大。
-

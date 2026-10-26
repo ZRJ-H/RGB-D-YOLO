@@ -1,0 +1,18 @@
+# Values are explicit and version-controlled; camera intrinsics live in a
+# separate calibration file supplied by the caller.
+depth_scale: 0.001
+min_depth_m: 0.1
+max_depth_m: 5.0
+floor_roi_y_min: 0.5
+plane_sample_stride: 4
+plane_ransac_iterations: 160
+plane_distance_threshold_m: 0.015
+min_plane_points: 250
+min_plane_inlier_ratio: 0.45
+min_object_height_m: 0.02
+max_object_height_m: 0.5
+min_component_pixels: 60
+morphology_kernel: 3
+min_mask_valid_ratio: 0.35
+random_seed: 0
+
