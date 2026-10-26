@@ -52,6 +52,8 @@ python -m pip install -r requirements-dev.txt
 
 ## 原始数据与权重
 
+**发布状态（2026-10-26）：代码已上线；数据和权重已在本地准备，Release 上传等待仓库所有者完成 GitHub 登录。在此状态解除前，下载命令会遇到 404。**
+
 大型资产放在本仓库的 [data-v1 Release](https://github.com/ZRJ-H/RGB-D-YOLO/releases/tag/data-v1)。下载器按清单验证每个分卷、合并文件和恢复文件的 SHA256；相同内容在包内去重。分卷不是独立 ZIP，请使用下载器恢复。
 
 | 分组 | 恢复内容 |

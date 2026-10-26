@@ -1,0 +1,144 @@
+{
+  "version": 1,
+  "base_url": "https://github.com/ZRJ-H/RGB-D-YOLO/releases/download/data-v1",
+  "groups": {
+    "models": {
+      "files": 16,
+      "unpacked_bytes": 3626462503,
+      "sha256": "5816f10c85f5698177512682a29cf8c8b85bbadb77765798a35b9c99f2ccd49d",
+      "parts": [
+        {
+          "name": "models.part001",
+          "bytes": 536870912,
+          "sha256": "64029a285eb9989db3f52c8cec68782ecffd4a62c6807d15bc0a8e5ed0b0b8b2"
+        },
+        {
+          "name": "models.part002",
+          "bytes": 536870912,
+          "sha256": "d24108356aa2778b43e26ef476fb66c8d5d23e457f949de9b41d2a5178aca4bc"
+        },
+        {
+          "name": "models.part003",
+          "bytes": 536870912,
+          "sha256": "88f8a34d827a58b03908ada26337d03a511eddcac9b227b924fb2451543d9040"
+        },
+        {
+          "name": "models.part004",
+          "bytes": 536870912,
+          "sha256": "05f7064fed559ff79129333889f082d1fb664217f54acf36cd493dc13cdea6a9"
+        },
+        {
+          "name": "models.part005",
+          "bytes": 536870912,
+          "sha256": "0983f8e900fb9d9c219cec09e1c9f58e19b9a74a3fb1dc82294f82170cfbf371"
+        },
+        {
+          "name": "models.part006",
+          "bytes": 536870912,
+          "sha256": "086ae2b2d173af5205ac3d30632df8e63e8cb15eaeb5d825c89b7b7ef7c00f5d"
+        },
+        {
+          "name": "models.part007",
+          "bytes": 108517902,
+          "sha256": "0ceaeb9dd2831327283b34b8f290b0e918d36edfc4b5e410a869354dfc28449d"
+        }
+      ]
+    },
+    "reviewed": {
+      "files": 16588,
+      "unpacked_bytes": 8801139410,
+      "sha256": "06eeab213dfc66fae46356b7d6c44479aa81f4686b898d32114c7722070c5bb8",
+      "parts": [
+        {
+          "name": "reviewed.part001",
+          "bytes": 536870912,
+          "sha256": "cb7e5a0de5cdcdf85c9e11a9e39de4c627601fb11928a1992408532512019193"
+        },
+        {
+          "name": "reviewed.part002",
+          "bytes": 536870912,
+          "sha256": "8a7ad4c4c816c63f440e27a04e985bcd47225376c8895eed7ca447cfe80db966"
+        },
+        {
+          "name": "reviewed.part003",
+          "bytes": 536870912,
+          "sha256": "dc1aad401f7d57a4074d5aeda6b97cd23a3d46a692d62b0f351407703a0a3f6a"
+        },
+        {
+          "name": "reviewed.part004",
+          "bytes": 536870912,
+          "sha256": "56491aa39ca9a49af19ba84112fc736794f98b79240b8bde54522fe87fddca30"
+        },
+        {
+          "name": "reviewed.part005",
+          "bytes": 536870912,
+          "sha256": "ecf7db47c93b80c226d81438e05efbbc08fd2cf53cddc1b6ef936deda35dbb32"
+        },
+        {
+          "name": "reviewed.part006",
+          "bytes": 221023503,
+          "sha256": "a26c72c31927356b5300607f02bdcaae77dedff3819cd168c6515aedc1f83a28"
+        }
+      ]
+    },
+    "raw": {
+      "files": 1576,
+      "unpacked_bytes": 3075026555,
+      "sha256": "75f60c3a937f6f974ea31dc4d04253ba30a5fd14d899dac9d5361c804a97a134",
+      "parts": [
+        {
+          "name": "raw.part001",
+          "bytes": 536870912,
+          "sha256": "4612a8c84d239f31a4f31e120167a7148f44b7ef149ac32fbf440151eae17707"
+        },
+        {
+          "name": "raw.part002",
+          "bytes": 536870912,
+          "sha256": "3af710f914daeb5b4a8be4f2ef23cc9e380404e6cddddc4bb5ecfff4dbcdfe93"
+        },
+        {
+          "name": "raw.part003",
+          "bytes": 346935142,
+          "sha256": "6bd7f099c49ab7a992436e69cc572838ae20c4e2513866d6db62e06f9319275f"
+        }
+      ]
+    },
+    "public": {
+      "files": 4,
+      "unpacked_bytes": 2972530955,
+      "sha256": "149396dced8c32540941d0b260206c3e5a9537002d991587015da5a5f89e0cfa",
+      "parts": [
+        {
+          "name": "public.part001",
+          "bytes": 536870912,
+          "sha256": "2deaeec82a37ef2428ec375a97d0afe27841c7ea6f52a19a298e35057de31121"
+        },
+        {
+          "name": "public.part002",
+          "bytes": 536870912,
+          "sha256": "7877424223280b28c33f4b2d9940f234d4e8445ff9dffeb76e9c1e7f0b43441c"
+        },
+        {
+          "name": "public.part003",
+          "bytes": 536870912,
+          "sha256": "3b5f183825b8defcc57258c4d8ef60e82f88dc5fd96b99ee94cc9d67577af558"
+        },
+        {
+          "name": "public.part004",
+          "bytes": 536870912,
+          "sha256": "f6dedb79db62d4a85f1d297250328ee8601fecc832efbbefc26e14800d8bef7b"
+        },
+        {
+          "name": "public.part005",
+          "bytes": 536870912,
+          "sha256": "4ed0addbcd76ed5ecfea37006152bed70730b09586fbf68b2bfbd35308e56b9c"
+        },
+        {
+          "name": "public.part006",
+          "bytes": 288708138,
+          "sha256": "33e24f86a0bdc18312b25e2e93cce336eeaaf1ff8c5645c7dd77f3e39f873c82"
+        }
+      ]
+    }
+  }
+}
