@@ -14,5 +14,17 @@
   "copypaste_config_relocation": "passed",
   "training_dry_run": "passed",
   "new_training": false,
-  "new_physical_accuracy_evaluation": false
+  "new_physical_accuracy_evaluation": false,
+  "github_actions_commit_7e880a5": "success",
+  "release": {
+    "url": "https://github.com/ZRJ-H/RGB-D-YOLO/releases/tag/data-v1",
+    "asset_count": 27,
+    "data_parts": 22,
+    "data_bytes": 10628861101,
+    "server_sha256_and_size": "all_passed",
+    "anonymous_download_checks": [
+      "manifest.json",
+      "models.files.json"
+    ]
+  }
 }
