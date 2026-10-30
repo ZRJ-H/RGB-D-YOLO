@@ -1,9 +1,21 @@
 # Jetson Orin Nano 8GB 环境镜像
 
+## 实机结果与适用范围
+
+2026-10-08 已在 Orin Nano Super、Ubuntu 22.04、L4T 36.4.7 上完成 Docker GPU 自检和图片推理。实际运行的是 RGB 分割与独立深度预览，输出 `spatial_fusion=false`、RGB 实例 `geometry=null`；实时相机、RGBD 配准和稳定帧率尚未验收。
+
+本目录保留原交付的构建与启动脚本，`run_jetson.sh` 固定检查 L4T 36.4.4。上述 36.4.7 实机验证通过单独的运行脚本调用容器完成，该脚本未包含在本仓库中；不要直接把下方旧启动命令套到 36.4.7 环境。
+
+容器内代码位于 `/opt/yolo-depth`，权重位于 `/opt/yolo-depth/models/best.pt`；运行结果写入绑定到 `/outputs` 的宿主机目录。新的运行使用独立输出目录。原开发机的新镜像包、构建暂存及交付材料统一放在 `E:/gpt/_release`，其他机器使用对应的数据盘位置。
+
+项目入口见 [README](../../README.md)，模块关系见 [工程架构](../../docs/ARCHITECTURE.md)。
+
+## 原交付的构建流程
+
 配套应用：YOLO + Depth `v0.1.0-preview`。目标主机：JetPack **6.2.1** / Jetson Linux **36.4.4**，ARM64。
 
 这是装好应用与依赖的 **Docker 离线应用镜像**。板子先烧录 NVIDIA JetPack，再导入本镜像；不能把 Docker tar 写入SD卡当系统镜像启动。
-用户已确认板卡尚未烧录，按兼容版本准备。第三方载板需要其厂商对应的BSP与烧录步骤，不能仅凭Orin Nano模块型号选择开发套件SD镜像。
+初次镜像准备时板卡尚未烧录，下列步骤供重新准备环境时参考。第三方载板使用其厂商对应的 BSP 与烧录步骤。
 
 ## 固定的环境来源
 
@@ -70,7 +82,7 @@ docker save -o yolo-depth_0.1.0-preview-jp6.2.1-arm64.tar yolo-depth:0.1.0-previ
 
 ## 验证边界
 
-已有Windows发布包的CPU/GPU测试不等于本ARM64容器的运行验收。当前未连接Jetson实机，不能验证其GPU可用性、时延、内存或散热。最终交付的 `BUILD_STATUS.json` 明确区分镜像完整性检查与板端验收。
+已有 Windows 发布包的 CPU/GPU 测试不等于 ARM64 容器的运行验收。2026-10-08 的实机记录证明当时环境中的 GPU 自检和图片推理通过；新的镜像或设备仍需检查其实际运行情况。`BUILD_STATUS.json` 记录的是对应交付时的状态，不能替代新环境的时延、内存或散热测量。
 模型仍是预标注用途，原有误检漏检未因打包自动改善。基础镜像的AGPL及各第三方许可沿用原条款。
 
 ## 官方参考

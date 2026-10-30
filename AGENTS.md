@@ -7,4 +7,4 @@
 - Preserve existing datasets, model weights and outputs; use distinct experiment names.
 - Use explicit paths for portable entry points. Historical experiment scripts may retain documented environment dependencies.
 - Store release staging, archives, checksums and verification sidecars under `E:/gpt/_release` on the original Windows workstation.
-- Run relevant regression tests and record material changes to validation scope.
+- Use checks proportional to the change: review links and commands for documentation, and run relevant module tests for code changes. Do not default to full regression, smoke tests, training, or large-file hashing; record material changes to validation scope.

@@ -4,6 +4,18 @@
 
 当前 RGB 模型为 YOLO11s-seg，类别只有 `0: sweepable_litter`。RGB 与深度目前独立处理，`spatial_fusion=false`；仓库名称不代表已经完成 RGBD 配准、融合训练或实时机器人闭环。
 
+## 阅读入口
+
+| 你要做什么 | 从这里开始 |
+|---|---|
+| 理解代码分层、模块关系与输入输出 | [工程架构](docs/ARCHITECTURE.md) |
+| 下载模型后运行图片、准备审核数据或训练 | [日常工作流](docs/WORKFLOWS.md) |
+| 按用途查找研究、诊断、报告和发布脚本 | [工具索引](tools/README.md) |
+| 查找专题说明和历史实验文档 | [文档导航](docs/README.md) |
+| 迁移双目或历史批次工具 | [复现范围](docs/REPRODUCIBILITY.md) |
+
+第一次使用可以依次阅读本页的安装、资产下载与快速运行；继续开发时按上面的入口查找相关模块。
+
 ## 能力与边界
 
 | 模块 | 已有能力 | 限制 |
@@ -150,7 +162,7 @@ python predict_garbage_teacher.py --model models/best.pt --source path/to/rgb_fr
 
 深度公式一般为 `Z = fx * baseline / disparity`，其成立依赖校正后的投影参数与主点关系；不要对未校正原图直接套用某个固定焦距/基线。点云公式核验不代表实物尺寸准确。历史 Raw1 数据存在标定与图片坐标状态不匹配的证据，相关参数仅保留实验记录。
 
-2026-10-08 曾在 Orin Nano、Ubuntu 22.04、L4T 36.4.7 上完成 Docker GPU 自检、30项发布测试及6组图片推理。镜像环境观察值为 CUDA 12.6、NVIDIA PyTorch 2.5.0a0、Ultralytics 8.3.179；这不是所有 JetPack 版本兼容性承诺。原启动器限定 L4T 36.4.4，历史 [Jetson README](deployment/jetson/README.md) 的“未验收”描述属于镜像构建时状态；不要原样套用旧启动器于 36.4.7。
+2026-10-08 曾在 Orin Nano、Ubuntu 22.04、L4T 36.4.7 上完成 Docker GPU 自检、30项发布测试及6组图片推理。镜像环境观察值为 CUDA 12.6、NVIDIA PyTorch 2.5.0a0、Ultralytics 8.3.179；这不是所有 JetPack 版本兼容性承诺。原启动器限定 L4T 36.4.4，[Jetson 部署说明](deployment/jetson/README.md) 区分了原构建流程和实机结果；不要原样套用旧启动器于 36.4.7。
 
 重新打包的所有暂存、压缩包、校验侧文件应在 `E:/gpt/_release`，例如：
 
@@ -161,6 +173,8 @@ python tools/build_preview_release.py --destination E:/gpt/_release/rgbd_preview
 构建后先按发布工具执行验证，再封包；不要覆盖旧发布目录。
 
 ## 测试与历史指标
+
+日常修改按影响范围选择检查：文档改动核对链接和命令，代码改动运行对应模块测试；不默认重跑全套回归、冒烟、训练或大文件哈希。需要完整 CPU 检查时使用：
 
 ```bash
 python -m pytest tests -q

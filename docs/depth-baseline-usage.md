@@ -1,5 +1,7 @@
 # 深度检测第一版使用说明
 
+工程入口见 [项目首页](../README.md)，常用命令见 [日常工作流](WORKFLOWS.md)。真实数据优先使用 `run_perception.py depth-calibrated`，它要求显式提供已确认的深度单位比例；下文保留原有深度入口的接口说明。
+
 ## 定位
 
 这一版只负责深度几何，不判断垃圾语义，也不决定清扫或避障。输出中的
@@ -22,7 +24,7 @@ result = DepthObstacleDetector(config).process(
 )
 ```
 
-未来YOLO分割结果接入时，将一个实例的布尔掩膜传给：
+未来YOLO分割结果接入时，先将实例掩膜配准到深度图的像素坐标系，再将布尔掩膜传给（尺寸相同本身不代表已配准）：
 
 ```python
 measurement = detector.measure_mask(depth_image, intrinsics, instance_mask)
@@ -44,15 +46,10 @@ cx: 由深度相机标定结果填写
 cy: 由深度相机标定结果填写
 ```
 
-然后运行：
+确认 `config/depth_baseline.yaml` 中的 `depth_scale` 与实际深度单位一致后运行。默认 `0.001` 只适用于原始数值已确认是毫米的输入；米制数组应设为 `1`。
 
-```powershell
-D:\softwares\Anaconda3\envs\yolov8\python.exe run_depth_baseline.py `
-  --depth path\to\depth.png `
-  --intrinsics path\to\camera_03_depth_intrinsics.yaml `
-  --config config\depth_baseline.yaml `
-  --rotate 180 `
-  --output outputs\depth\depth_baseline_run_name
+```bash
+python run_depth_baseline.py --depth path/to/depth.png --intrinsics path/to/camera_03_depth_intrinsics.yaml --config config/depth_baseline.yaml --rotate 180 --output outputs/depth/depth_baseline_run_name
 ```
 
 输出目录不能已存在，避免覆盖历史结果。输出包含：
